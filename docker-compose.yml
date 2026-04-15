@@ -2,9 +2,6 @@ services:
   openmaic:
     build:
       context: .
-      args:
-        # 国内镜像加速（可选，注释掉则使用默认 Docker Hub）
-        # DOCKER_REGISTRY: registry.cn-hangzhou.aliyuncs.com/mirrorx
     ports:
       - "80:3000"
     env_file:
