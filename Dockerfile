@@ -1,5 +1,5 @@
 # ---- Stage 1: Base ----
-FROM registry.cn-hangzhou.aliyuncs.com/mirrorx/node:22-alpine AS base
+FROM node:22-alpine AS base
 
 # 使用阿里云镜像源加速 apk 包下载
 RUN echo 'https://mirrors.aliyun.com/alpine/v3.20/main' > /etc/apk/repositories && \
@@ -31,7 +31,7 @@ COPY . .
 RUN pnpm build
 
 # ---- Stage 4: Runner ----
-FROM registry.cn-hangzhou.aliyuncs.com/mirrorx/node:22-alpine AS runner
+FROM node:22-alpine AS runner
 
 # 使用阿里云镜像源
 RUN echo 'https://mirrors.aliyun.com/alpine/v3.20/main' > /etc/apk/repositories && \

@@ -4,8 +4,8 @@ services:
       context: .
     ports:
       - "80:3000"
-    env_file:
-      - .env.local
+    # env_file:
+    #   - .env.local
     volumes:
       # Optional: mount server-providers.yml for provider config
       # - ./server-providers.yml:/app/server-providers.yml:ro
